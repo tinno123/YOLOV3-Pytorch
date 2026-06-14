@@ -89,7 +89,7 @@ python train.py
 
 独立评估：
 ```bash
-python get_map.py
+python val.py
 ```
 
 编辑 `get_map.py` 设置：
@@ -103,7 +103,7 @@ python get_map.py
 
 导出训练好的模型为 ONNX 格式：
 ```bash
-python pth2onnx.py
+python export.py
 ```
 
 编辑 `pth2onnx.py` 设置：
