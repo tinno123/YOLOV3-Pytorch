@@ -266,7 +266,6 @@ class Dataset(torch.utils.data.Dataset):
 
 
     def load_samples(self):
-        # 遍历标签文件夹，根据标签名称去找对应的图片
         all_files = os.listdir(self.labelpath)
         for file in all_files:
             labelpath = Path(self.labelpath / Path(file))
