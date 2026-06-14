@@ -7,6 +7,8 @@
 | 数据集 | 预训练权重 | mAP@0.5 | 说明                    |
 |--------|-----------|---------|-----------------------|
 | VOC2012 | DarkNet-53 Backbone | 68.0% | 仅加载DarkNet53主干网络预训练权重 |
+
+
 权重 : https://pan.baidu.com/s/1lrGKaaRbG5oggukrqjHO5w?pwd=268q 提取码: 268q
 ### 与参考实现对比
 
