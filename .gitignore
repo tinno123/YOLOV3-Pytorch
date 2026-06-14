@@ -1,0 +1,15 @@
+# Python缓存
+__pycache__/
+*.py[cod]
+*.pyc
+
+## 权重文件
+weights/
+*.pth
+*.pt
+*.weights
+
+# IDE配置
+.idea/
+
+
