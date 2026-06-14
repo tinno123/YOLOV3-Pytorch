@@ -43,12 +43,11 @@ matplotlib>=3.7.0
 ```
 yolov3_replication/
 ├── models/                 # 模型定义
-│   ├── darknet.py         # DarkNet-53 骨干网络
-│   ├── fpn.py            # 特征金字塔网络
-│   └── yolov3.py         # YOLOv3 完整模型
+│   ├── DarkNet.py         # DarkNet-53 骨干网络
+│   ├── FPN.py            # 特征金字塔网络
+│   └── YOLOv3.py         # YOLOv3 完整模型
 ├── utils/                  # 工具函数
 │   ├── datasets.py        # 数据加载与增强
-│   ├── augmentation.py    # 图像增强
 │   ├── labels.py          # 标签构建
 │   ├── loss.py            # YOLO 损失函数
 │   └── train_tools.py     # 训练辅助工具
@@ -56,7 +55,7 @@ yolov3_replication/
 │   ├── darknet53_backbone_weights.pth
 │   └── yolo_weights.pth
 ├── train.py                # 训练脚本
-├── yolo.py                 # 推理引擎
+├── yolo.py                 # 功能封装
 ├── detect.py               # 检测示例
 ├── val.py              # mAP 评估示例
 └── export.py             # ONNX 导出示例
@@ -92,7 +91,7 @@ python train.py
 python val.py
 ```
 
-编辑 `get_map.py` 设置：
+编辑 `val.py` 设置：
 - `label_path`：验证集标签路径
 - `image_path`：验证集图片路径
 - `weight`：训练好的模型权重路径
@@ -106,7 +105,7 @@ python val.py
 python export.py
 ```
 
-编辑 `pth2onnx.py` 设置：
+编辑 `export.py` 设置：
 - `weight`：训练好的模型权重路径
 - `onnx_path`：输出 ONNX 文件路径
 - `num_classes`：类别数量
