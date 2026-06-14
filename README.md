@@ -58,8 +58,8 @@ yolov3_replication/
 ├── train.py                # 训练脚本
 ├── yolo.py                 # 推理引擎
 ├── detect.py               # 检测示例
-├── get_map.py              # mAP 评估示例
-└── pth2onnx.py             # ONNX 导出示例
+├── val.py              # mAP 评估示例
+└── export.py             # ONNX 导出示例
 ```
 
 ## 使用说明
