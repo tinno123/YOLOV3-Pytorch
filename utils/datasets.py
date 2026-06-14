@@ -15,8 +15,6 @@ def rand( a=0, b=1):
     return np.random.rand() * (b - a) + a
 def get_random_data(image, box, input_shape, jitter=.3, hue=.1, sat=0.7, val=0.4, random=True):
     """
-    图像增强函数，直接支持 [class_id, xc, yc, w, h] 格式（归一化）
-    
     Args:
         image: PIL图像
         box: np.array, shape=(N,5), [class_id, xc, yc, w, h] (归一化坐标)
