@@ -62,11 +62,15 @@ class YoloLoss(nn.Module):
         if  positive_mask.sum() == 0:
             zero = torch.tensor(0., device=pred.device, requires_grad=True)
             return pred.sum() * 0.0, zero, zero, zero, zero
-        layer = [
-            [0, 507],
-            [507, 2535],
-            [2535, 10647]
-        ]
+        
+        # 计算每个特征层的索引范围
+        layer = []
+        start_idx = 0
+        for stride in self.stride:
+            h, w = self.image_size[0] // stride, self.image_size[1] // stride
+            num_anchors = h * w * 3
+            layer.append([start_idx, start_idx + num_anchors])
+            start_idx += num_anchors
 
 
         lbox = torch.zeros(1,device=pred.device)

@@ -64,13 +64,12 @@ def build_labels(image_size, targets, anchors,stride = [ 32, 16, 8]):
     :param targets: 所有的真实标签[N,5] class,cx,cy,w,h（已归一化到0-1）
     :param anchors : 所有尺度的Anchors,从大到小排列[9,2]（像素值）
     :param stride: 下采样步长，顺序[32,16,8]
-    :return:  label : [class_id, cx_offset, cy_offset, w_log, h_log, 正负样本标记mask, 忽略样本标记mask] [10647,7]
+    :return:  label : [class_id, cx_offset, cy_offset, w_log, h_log, 正负样本标记mask, 大小目标权重平衡] [10647,7]
              各维度说明：
              - class_id: 目标类别ID（正样本有效，负样本/忽略样本为0）
              - cx_offset/cy_offset: 目标中心在特征图网格内的偏移（0~1）
              - w_log/h_log: 目标宽高/对应Anchor宽高的对数（正样本有效）
              - 正负样本标记mask: 1=正样本，0=负样本
-             - 忽略样本标记mask: 1=忽略样本（不计入损失），0=非忽略
     """
     # -----------------------------#
     # 获取先验框
