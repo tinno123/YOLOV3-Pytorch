@@ -12,10 +12,10 @@
 权重 : https://pan.baidu.com/s/1lrGKaaRbG5oggukrqjHO5w?pwd=268q 提取码: 268q
 ### 与参考实现对比
 
-代码架构和复现参考：[bubbliiiing/yolo3-pytorch](https://github.com/bubbliiiing/yolo3-pytorch)
-
+代码架构参考：[bubbliiiing/yolo3-pytorch](https://github.com/bubbliiiing/yolo3-pytorch)
 - **训练速度**：相比 bubbliiiing 的实现快约 30%/iteration
 - **精度表现**：使用相同权重和超参数下，mAP 无差异（backbone 权重来自 bubbliiiing 仓库）
+- **代码框架**：框架设计参考bubbliiiing的复现，核心代码如标签匹配、损失函数设计、backbone构建等均自主实现
 
 ## 特性
 
